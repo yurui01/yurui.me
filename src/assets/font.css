@@ -1,0 +1,77 @@
+/* PingFang Light */
+@font-face {
+  font-family: 'PingFang Light';
+  src: url('../assets/fonts/PingFang Light.ttf');
+}
+
+/* PingFang Regular */
+@font-face {
+  font-family: 'PingFang Regular';
+  src: url('../assets/fonts/PingFang Regular.ttf');
+}
+
+/* PingFang Medium */
+@font-face {
+  font-family: 'PingFang Medium';
+  src: url('../assets/fonts/PingFang Medium.ttf');
+}
+
+/* PingFang Bold */
+@font-face {
+  font-family: 'PingFang Bold';
+  src: url('../assets/fonts/PingFang Bold.ttf');
+}
+
+/* PingFang Heavy */
+@font-face {
+  font-family: 'PingFang Heavy';
+  src: url('../assets/fonts/PingFang Heavy.ttf');
+}
+
+/* PingFang ExtraLight */
+@font-face {
+  font-family: 'PingFang ExtraLight';
+  src: url('../assets/fonts/PingFang ExtraLight.ttf');
+}
+
+/* DM Sans */
+@font-face {
+  font-family: 'DM Sans';
+  src: url('../assets/fonts/DM Sans.ttf');
+}
+
+/* DM Sans Bold */
+@font-face {
+  font-family: 'DM Sans Bold';
+  src: url('../assets/fonts/DM Sans Bold.ttf');
+}
+
+/* DM Sans Medium */
+@font-face {
+  font-family: 'DM Sans Medium';
+  src: url('../assets/fonts/DM Sans Medium.ttf');
+}
+
+/* DM Sans Light */
+@font-face {
+  font-family: 'DM Sans Light';
+  src: url('../assets/fonts/DM Sans Light.ttf');
+}
+
+/* DM Sans ExtraLight */
+@font-face {
+  font-family: 'DM Sans ExtraLight';
+  src: url('../assets/fonts/DM Sans ExtraLight.ttf');
+}
+
+/* DM Sans BoldItalic */
+@font-face {
+  font-family: 'DM Sans BoldItalic';
+  src: url('../assets/fonts/DM Sans BoldItalic.ttf');
+}
+
+/* DM Sans MediumItalic */
+@font-face {
+  font-family: 'DM Sans MediumItalic';
+  src: url('../assets/fonts/DM Sans MediumItalic.ttf');
+}
