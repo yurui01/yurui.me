@@ -7,7 +7,7 @@ export default function HomePage() {
       <div className="w-screen h-screen absolute -z-50 bg-gradient-to-r from-violet-100 via-cyan-50 to-green-50 background-animate" />
       <div className="container mx-auto md:px-20 md:py-32 px-8 py-12">
         <div className="flex-col gap-8 flex">
-          <div className="bg-[#002fa7] w-20 h-20 rounded-full shadow-slate-400 shadow-lg" />
+          <div className="bg-[#1F18C0] w-20 h-20 rounded-full shadow-slate-400 shadow-lg" />
           <div className="text-4xl tracking-wider xl:mt-12 mt-6 font-light">yr.</div>
           <div className="tracking-tighter font-semibold xl:text-6xl text-4xl xl:leading-relaxed leading-tight">
             <span className="block">Full Stack Development Engineer</span>
