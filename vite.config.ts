@@ -4,6 +4,12 @@ import Pages from "vite-plugin-pages";
 import { resolve } from "path";
 import fs from "fs-extra";
 import matter from "gray-matter";
+import Markdown from 'vite-plugin-react-markdown'
+import Shiki from 'markdown-it-shiki'
+import anchor from 'markdown-it-anchor'
+import TOC from 'markdown-it-table-of-contents'
+
+import { slugify } from './src/utils/slugify';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -30,6 +36,30 @@ export default defineConfig({
         }
         return routes;
       },
+    }),
+    Markdown({
+      // wrapperComponentPath: './src/components/PostWapper',
+      // wrapperComponent: true,
+      markdownItSetup(md) {
+        md.use(Shiki, {
+          theme: {
+            light: 'vitesse-light',
+            dark: 'vitesse-dark',
+          },
+        })
+        md.use(anchor, {
+          slugify,
+          permalink: anchor.permalink.linkInsideHeader({
+            symbol: '#',
+            renderAttrs: () => ({ 'aria-hidden': 'true' }),
+          }),
+        })
+
+        md.use(TOC, {
+          includeLevel: [1, 2, 3],
+          slugify,
+        })
+      }
     }),
   ],
 });
