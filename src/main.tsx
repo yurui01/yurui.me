@@ -1,16 +1,16 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import { BrowserRouter } from 'react-router-dom';
-import App from './App'
-import dayjs from 'dayjs';
-import utc from 'dayjs/plugin/utc';
-
-import './assets/index.css'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+import App from "./App";
+import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
+import "./locales/i18n";
+import "./assets/index.css";
 
 dayjs.extend(utc);
 
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <BrowserRouter>
     <App />
-  </BrowserRouter>,
-)
+  </BrowserRouter>
+);

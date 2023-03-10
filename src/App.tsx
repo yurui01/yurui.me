@@ -1,10 +1,15 @@
 /// <reference types="vite-plugin-pages/client-react" />
 import { Suspense } from "react";
-import { useRoutes } from 'react-router-dom';
+import { useRoutes } from "react-router-dom";
 import routes from "~react-pages";
+import LayoutWapper from "./components/LayoutWapper";
 
 function App() {
-  return <Suspense>{useRoutes(routes)}</Suspense>;
+  return (
+    <Suspense>
+      <LayoutWapper>{useRoutes(routes)}</LayoutWapper>
+    </Suspense>
+  );
 }
 
 export default App;
