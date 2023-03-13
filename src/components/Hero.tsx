@@ -1,7 +1,7 @@
 // @ts-nocheck
 
 import { Vector3 } from "three";
-import React, { useState, useRef } from "react";
+import { useRef } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { Text3D, Center, SpotLight, useDepthBuffer } from "@react-three/drei";
 import { useLocales } from "@/locales";

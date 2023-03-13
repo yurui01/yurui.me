@@ -18,7 +18,9 @@ export default function LayoutWapper({ children }: LayoutWapperProps) {
         {/* Navbar */}
         <Navbar title="Yr." items={navItems} />
 
-        <main className="">{children}</main>
+        <main className=" flex flex-wrap items-center justify-between mx-auto w-full h-full absolute z-40">
+          {children}
+        </main>
       </div>
     </div>
   );
