@@ -39,7 +39,7 @@ export default function Navbar() {
           ease: "linear",
         },
       }}
-      className="sticky top-0 lg:px-16 lg:py-4"
+      className="sticky top-0 lg:px-16 lg:py-4 px-4"
     >
       <div className="flex items-center justify-between py-3 bg-transparent dark:bg-gray-800 w-full">
         <Link href="/#">

@@ -19,6 +19,11 @@ function fadeWords(text: string, delay: number = 0) {
             ease: "linear",
           },
         }}
+        transition={{
+          visibility: {
+            duration: 0,
+          },
+        }}
       >
         {char}
       </motion.span>
@@ -29,13 +34,13 @@ function fadeWords(text: string, delay: number = 0) {
 export default function Home() {
   return (
     <section className="h-full">
-      <div className="grid grid-cols-2 h-full">
-        <div className="prose lg:prose-xl prose-sm prose-slate col-span-1 flex flex-col justify-center">
+      <div className="h-full">
+        <div className="prose lg:prose-xl prose-sm prose-slate flex flex-col justify-center">
           <div className="mb-20">
-            <div className="font-medium md:text-4xl text-2xl">
+            <h2 className="font-medium md:text-4xl text-2xl">
               {fadeWords("Hello,", 0.5)}
-            </div>
-            <h2 className="font-medium md:text-3xl text-xl space-y-2">
+            </h2>
+            <h3 className="font-medium md:text-3xl text-xl space-y-2">
               <span className="block">{fadeWords("I'm Ray", 1)}</span>
               <span className="block">
                 {fadeWords("Software developer", 1)}
@@ -43,7 +48,7 @@ export default function Home() {
               <span className="block">
                 {fadeWords("Amateur digital art", 1)}
               </span>
-            </h2>
+            </h3>
           </div>
 
           <div>
