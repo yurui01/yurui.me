@@ -1,0 +1,141 @@
+---
+title: Potree开发笔记-1：功能
+date: 2023-03-13 19:17:59
+summary: 本文介绍了Potree点云可视化工具的各种功能，从外观到工具再到场景中的对象和点云属性、颜色，一一进行了详细解析。其中包括点云数量上限、视野范围、测量工具、裁剪工具、控制方式、视角、投影模式等多方面内容。
+---
+
+# 功能
+
+## 外观
+
+- Point Budget  
+  设置点云数量上限，超过上限后，会自动降低点云密度，以保证点云数量不超过上限。
+- Field of View  
+  设置视野范围。
+- Eye-Dome Lighting  
+  Eye-Dome Lighting（EDL）shader 是一种用于渲染图形和视觉效果的着色器（shader）。它可以模拟 EDL 灯光技术，产生柔和、自然、高质量的光线效果，使得渲染的场景更加逼真。
+
+  EDL shader 通常使用在电影、游戏、虚拟现实、建筑可视化等领域。它可以为渲染的场景添加柔和的阴影、提高场景的对比度、增强场景的明暗层次等效果。EDL shader 的运算量较大，需要较高的计算性能。
+
+- Background  
+  设置背景颜色
+
+- Splat Quality  
+  设置点云渲染质量，越高越清晰，但是性能消耗越大。
+
+## 工具
+
+### 测量工具
+
+- 角度测量
+- 点测量
+- 距离测量
+- 高度测量
+- 圆测量
+- 方位测量
+- 区域测量
+- 体积测量
+- 高度剖面
+- 标柱
+
+### 裁剪工具
+
+- Volume clip  
+  可创建一个带有包围盒的立方体，可以调整裁剪体的大小和位置。
+- Polygon Clip
+- Rectangle Clip
+- Remove All Clip  
+  移除所有裁剪工具
+
+### 控制方式
+
+- Earth Control  
+  鼠标将捕获点云上某个点作为中心，鼠标右键拖动可以旋转点云，鼠标左键拖动可以平移点云，鼠标滚轮可以缩放点云。
+- Fly Control  
+  可理解为第一人称视角，通过按下 W、A、S、D 键可以控制相机的前后左右移动，通过鼠标左键拖动可以控制相机的旋转。
+- Heelicopter Control  
+  与 Fly Control 类似，但是固定相机高度。
+- Orbit Control  
+  通过鼠标左键拖动可以控制相机的旋转，通过鼠标右键拖动可以控制相机的平移，通过鼠标滚轮可以控制相机的缩放。
+- Full Extent  
+  将点云居中显示在视图中。
+- Navigation Cube  
+  好像没啥用
+- Compass  
+  指南针
+- Camera Animation  
+  创建相机动画，可拖动轨迹点或相机角度。
+
+### 视角
+
+可以切换相机视角，包括：左视角、右视角、前视角、后视角、上视角、下视角。
+
+### 投影模式
+
+- Perspective
+  透视投影
+- Orthographic
+  正交投影
+
+## 场景
+
+### 对象
+
+树形视图表示场景中的所有对象，包括：
+
+- Point Clouds  
+  点云对象
+- Measurements  
+  测量对象
+- Annotations  
+  标注对象
+- Other  
+  其他对象
+- Vectors  
+  向量对象
+- Images  
+   图片对象
+  选中不同类型的对象，下面的属性面板会显示不同的属性。点击勾选框可以显示或隐藏对象。
+
+### 点云属性
+
+- Point Size  
+  点大小
+- minimum Point Size  
+  最小点大小
+- Point Sizing  
+  点大小模式(Fixed, Adaptive), Adaptive 模式下，点大小会根据相机距离点云的距离而变化。Fixed 模式下，点大小不会变化。
+- Shape  
+  点形状(Square, Circle), Square 模式下，点是正方形，Circle 模式下，点是圆形。
+- opacity  
+  透明度
+
+### 点云颜色
+
+可选择不同的颜色模式，包括：
+
+- RGBA  
+  点云颜色由 RGBA 四个通道组成，每个通道的取值范围为 0-255。
+  可设置的属性有：
+
+  - Gamma  
+    Gamma 矫正
+  - Brightness  
+    亮度
+  - Contrast  
+    对比度
+
+- Elevation  
+  点云颜色根据渐变色来表示点云的高度。
+  可设置的属性有：
+
+  - Range  
+    高度范围
+  - Gradient Type  
+    渐变类型
+  - Gradient Scheme  
+    渐变方案
+
+- Color
+  手动选择点云颜色
+  从颜色选择器中选择颜色
