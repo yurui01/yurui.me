@@ -4,20 +4,19 @@
 
 :root {
   /* Your default theme */
-  --background: white;
+  --background: #fafafa;
   --foreground: black;
 }
 
 [data-theme='dark'] {
   --background: black;
-  --foreground: white;
+  --foreground: #fafafa;
 }
 
 html {
   width: 100vw;
   height: 100vh;
   overflow-x: hidden;
-  background: var(--foreground);
 }
 
 @font-face {
