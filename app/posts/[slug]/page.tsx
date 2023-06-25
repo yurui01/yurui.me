@@ -31,11 +31,11 @@ export default async function PostLayout({ params }) {
 
   return (
     <article className="py-8 mx-auto max-w-2xl px-4 lg:px-0">
-      <div className="mb-8 text-center">
+      <div className="mb-12 text-center">
         <time dateTime={post.date} className="mb-1 text-xs text-gray-600">
           {format(parseISO(post.date), "LLLL d, yyyy")}
         </time>
-        <h1>{post.title}</h1>
+        <h1 className="text-2xl">{post.title}</h1>
       </div>
       <MDX code={post.body.code} />
     </article>

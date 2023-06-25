@@ -21,7 +21,7 @@ export default function Posts() {
             </p>
             <a
               href={`/posts/${post._raw.flattenedPath}`}
-              className="rounded-xl p-4 hover:bg-zinc-50 max-w-xl w-full"
+              className="rounded-xl p-4 hover:bg-zinc-50 dark:hover:bg-zinc-800 max-w-xl w-full"
             >
               <div className="flex flex-col">
                 <h2 className="font-semibold">{post.title}</h2>

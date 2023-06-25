@@ -1,6 +1,5 @@
 "use client";
-// app/page.tsx
-import Link from "next/link";
+
 import { motion } from "framer-motion";
 
 function fadeWords(text: string, delay: number = 0) {
@@ -35,7 +34,7 @@ export default function Home() {
   return (
     <section className="h-full">
       <div className="h-full">
-        <div className="prose lg:prose-xl prose-sm prose-slate flex flex-col justify-center">
+        <div className="prose lg:prose-xl prose-sm prose-slate flex flex-col justify-center dark:prose-invert">
           <div className="mb-20">
             <h2 className="font-medium md:text-4xl text-2xl">
               {fadeWords("Hello,", 0.5)}

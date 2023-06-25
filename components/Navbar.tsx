@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
+import { useTheme } from "next-themes";
+import { useEffect } from "react";
 
 const title = "Yr.";
 
@@ -20,6 +22,10 @@ const navItems = [
     path: "/posts",
   },
   {
+    name: "projects",
+    path: "/projects",
+  },
+  {
     name: "favorites",
     path: "/favorites",
   },
@@ -27,7 +33,12 @@ const navItems = [
 
 export default function Navbar() {
   const pathname = usePathname();
+  const { theme, setTheme } = useTheme();
 
+  useEffect(() => {
+    console.log(theme);
+  }, [theme]);
+  
   return (
     <motion.nav
       animate={{
@@ -41,7 +52,7 @@ export default function Navbar() {
       }}
       className="sticky top-0 lg:px-16 lg:py-4 px-4"
     >
-      <div className="flex items-center justify-between py-3 bg-transparent dark:bg-gray-800 w-full">
+      <div className="flex items-center justify-between py-3 bg-transparent dark:bg-zinc-900 w-full">
         <Link href="/#">
           <span className="font-light tracking-widest">{title}</span>
         </Link>

@@ -1,31 +1,36 @@
 ---
 title: Potree开发笔记-2：加载自定义点云
-date: 2021-03-14
+date: 2023-03-14
 summary: 本文介绍了如何使用Potree加载自定义点云。首先需要使用PotreeConverter将点云数据转换为Potree支持的格式，然后再使用现有的Potree代码库中提供的代码将点云加载到Potree中即可。
 ---
 
-Potree是一个用于Web浏览的3D点云可视化工具，具有高性能和开放源代码。本文将介绍如何使用Potree加载自定义点云。
+Potree 是一个用于 Web 浏览的 3D 点云可视化工具，具有高性能和开放源代码。本文将介绍如何使用 Potree 加载自定义点云。
 
 # PotreeConverter
-在使用Potree加载自定义点云之前，我们需要使用PotreeConverter将点云数据转换为Potree支持的格式。PotreeConverter是一个命令行工具，可以将常见的点云文件格式（如LAS、LAZ、PLY、XYZ等）转换为Potree支持的格式。
+
+在使用 Potree 加载自定义点云之前，我们需要使用 PotreeConverter 将点云数据转换为 Potree 支持的格式。PotreeConverter 是一个命令行工具，可以将常见的点云文件格式（如 LAS、LAZ、PLY、XYZ 等）转换为 Potree 支持的格式。
 
 # 下载与安装
-PotreeConverter可以从Potree的GitHub页面上进行下载，该页面链接为：https://github.com/potree/PotreeConverter 。
 
-下载完成后，我们需要解压缩文件并运行PotreeConverter.exe。
+PotreeConverter 可以从 Potree 的 GitHub 页面上进行下载，该页面链接为：https://github.com/potree/PotreeConverter 。
+
+下载完成后，我们需要解压缩文件并运行 PotreeConverter.exe。
 
 # 转换
-在使用PotreeConverter进行点云格式转换之前，我们需要将点云数据准备好。这包括将原始点云文件保存在计算机上，并将其转换为PotreeConverter支持的格式（如LAS、LAZ、PLY、XYZ）。
 
-下面是将LAS文件格式转换为Potree支持的格式的命令示例：
+在使用 PotreeConverter 进行点云格式转换之前，我们需要将点云数据准备好。这包括将原始点云文件保存在计算机上，并将其转换为 PotreeConverter 支持的格式（如 LAS、LAZ、PLY、XYZ）。
+
+下面是将 LAS 文件格式转换为 Potree 支持的格式的命令示例：
 
 PotreeConverter.exe C:\path\to\pointcloud.las -o C:\path\to\output --generate-page
-其中，“C:\path\to\pointcloud.las”是你要转换的LAS格式点云的路径，“C:\path\to\output”是你想要输出的Potree格式点云的路径。
+其中，“C:\path\to\pointcloud.las”是你要转换的 LAS 格式点云的路径，“C:\path\to\output”是你想要输出的 Potree 格式点云的路径。
 
-运行转换命令后，PotreeConverter会生成一个由许多文件和目录组成的输出文件夹。其中的“cloud.js”是在Potree中加载点云的主要文件。
+运行转换命令后，PotreeConverter 会生成一个由许多文件和目录组成的输出文件夹。其中的“cloud.js”是在 Potree 中加载点云的主要文件。
 
 # 加载
-在转换完成后，我们只需要使用现有的Potree代码库中提供的代码将点云加载到Potree中即可。这可以通过创建一个HTML文件来实现。以下是加载点云的代码示例：
+
+在转换完成后，我们只需要使用现有的 Potree 代码库中提供的代码将点云加载到 Potree 中即可。这可以通过创建一个 HTML 文件来实现。以下是加载点云的代码示例：
+
 ```
 <!DOCTYPE html>
 <html>
@@ -53,7 +58,8 @@ PotreeConverter.exe C:\path\to\pointcloud.las -o C:\path\to\output --generate-pa
 </html>
 ```
 
-`注：PotreeConverter version 1.7版本中转换出来的入口文件为cloud.js，而PotreeConverter version 2.0 版本中转换出来的入口文件为metadata.json。`
-在“Potree.loadPointCloud”调用中，第一个参数是一个相对或绝对路径，该路径指向之前生成的“cloud.js”文件。第二个参数是可选的，以便为点云提供一个名称。然后，我们可以将点云渲染到Potree中，从而使其在浏览器中显示出来。
+**注：PotreeConverter version 1.7版本中转换出来的入口文件为cloud.js，而PotreeConverter version 2.0 版本中转换出来的入口文件为metadata.json。**  
 
-总结：使用PotreeConverter工具将点云数据转换为Potree支持的格式，并将生成的文件加载到Potree中非常简单。这使得在Web上构建和创建自定义点云可视化非常容易。
+在**Potree.loadPointCloud**调用中，第一个参数是一个相对或绝对路径，该路径指向之前生成的“cloud.js”文件。第二个参数是可选的，以便为点云提供一个名称。然后，我们可以将点云渲染到 Potree 中，从而使其在浏览器中显示出来。
+
+总结：使用 PotreeConverter 工具将点云数据转换为 Potree 支持的格式，并将生成的文件加载到 Potree 中非常简单。这使得在 Web 上构建和创建自定义点云可视化非常容易。
